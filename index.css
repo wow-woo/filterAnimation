@@ -1,0 +1,133 @@
+header {
+  display: flex;
+  align-items: center;
+}
+nav {
+  margin-left: auto;
+}
+ul {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+a {
+  color: rgb(15, 22, 108);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+}
+
+html {
+  overflow: hidden;
+  cursor: none;
+}
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+section {
+  height: 100%;
+  /* object-fit: cover; */
+  user-select: none;
+}
+
+section img {
+  pointer-events: none;
+  width: 650px;
+  margin: 0 auto;
+  height: 100%;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: center;
+  z-index: 1;
+  mix-blend-mode: lighten;
+  opacity: 0;
+  animation: appear 2s ease forwards, shake 8s infinite ease 1s;
+}
+
+section video {
+  pointer-events: none;
+  width: 600px;
+  height: 99%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: center;
+  opacity: 0;
+  animation: appear 2s ease 1s forwards, shake 8s infinite ease 1s;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotateY(0) translateX(-50%);
+  }
+  25% {
+    transform: rotateZ(2deg) translateX(-50%);
+  }
+  50% {
+    transform: rotateY(0) translateX(-50%);
+  }
+  75% {
+    transform: rotateZ(-2deg) translateX(-50%);
+  }
+  100% {
+    transform: rotateY(0) translateX(-50%);
+  }
+}
+
+@keyframes shake2 {
+  0% {
+    transform: rotateY(0);
+  }
+  10% {
+    color: rgb(191, 111, 111);
+  }
+  25% {
+    transform: rotateZ(2deg);
+  }
+  40% {
+    color: rgb(140, 43, 157);
+  }
+  50% {
+    transform: rotateY(0);
+  }
+  65% {
+  }
+  75% {
+    transform: rotateZ(-2deg);
+  }
+  85% {
+    color: rgb(5, 121, 223);
+  }
+  100% {
+    transform: rotateY(0);
+  }
+}
+
+.main-text {
+  width: 200px;
+  margin-left: 220px;
+  animation: shake2 3s ease infinite;
+}
